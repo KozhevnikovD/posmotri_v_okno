@@ -13,7 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -35,4 +35,63 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.page {
+  display: flex;
+  margin: auto;
+  color: #fff;
+  align-items: center;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 1140px;
+  gap: 30px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.content__list {
+  position: relative;
+  overflow-y: scroll;
+  block-size: 298px;
+  scrollbar-width: none;
+}
+
+.result__video-container {
+  inline-size: 711px;
+  margin: 0 0 16px;
+}
+
+.result__video {
+  inline-size: 100%;
+}
+
+.content__list-item:not(:last-child) {
+  margin: 0 0 30px;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  block-size:194px;
+}
+
+.content__video-card-description-container {
+  width: 100%;
 }
