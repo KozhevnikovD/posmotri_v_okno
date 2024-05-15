@@ -68,7 +68,7 @@ video {
   block-size: 298px;
   position: relative;
   overflow-y: scroll;
-  scrollbar-width: none;
+  overflow-x: hidden;
   padding: 0 2px 0 2px;
 }
 
@@ -93,15 +93,13 @@ video {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .content__video-card-thumbnail {
-  inline-size: 378px;
+  inline-size: 194px;
   block-size: 103px;
-}
-
-.content__video-card-description-container {
-  width: 100%;
+  object-fit: cover;
 }
 
 .search-form__fieldset-title {
@@ -115,7 +113,7 @@ video {
   font-size: 75px;
   line-height: 70px;
   font-weight: 700;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   text-transform: uppercase;
   margin: 0 0 26px;
 }
@@ -134,7 +132,7 @@ video {
   font-size: 30px;
   line-height: 30px;
   font-weight: 700;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   text-transform: uppercase;
   margin: 0 0 6px;
   padding-top: 7px;
@@ -176,6 +174,14 @@ video {
 
 .button {
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  margin-top: 16px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .result {
@@ -200,52 +206,45 @@ video {
 }
 
 .search-form__submit-button {
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
   padding: 6px 73px 6px 73px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21.6px;
-  font-family: "Fira Sans Condensed", sans-serif;
-  margin-top: 16px;
 }
 
 .more-button {
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
   inline-size: 100%;
   padding: 6px 0 6px 0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21.6px;
-  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 .search-form__textfield {
   background-color: transparent;
   color: #fff;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
   appearance: none;
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;
   width: 225px;
   height: 27px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
   font-family: "Fira Sans Condensed", sans-serif;
-  border-right: none !important;
-  border-left: none !important;
   margin-top: 2px;
 }
 
-.search-form__textfield:has(:focus-visible) {
-  border: 1px solid #fff;
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:active {
+  outline: 1px solid #fff;
+}
+
+.search-form__textfield:focus-visible {
+  outline: none;
 }
 
 .search-form__label:has(:focus-visible) {
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .content__list-item:has(:active) {
@@ -256,14 +255,9 @@ video {
   background-color: #545050;
 }
 
-.search-form__label:has(:hover) {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   text-underline-offset: 3px;
-}
-
-.search-form__submit-button:hover {
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 .content__video-card-description-container:has(:hover) {
@@ -271,13 +265,32 @@ video {
   text-underline-offset: 4px;
 }
 
-.search-form {
-  .search-form__fieldset:first-child > .search-form__label:has(:hover) {
-    text-decoration: none !important ;
-    text-underline-offset: 0 !important;
-  }
+.content__card-link_current {
+  background-color: #545050;
 }
 
-.content__card-link_current {
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+}
+
+.button:hover {
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.button:active {
   background-color: #545050;
 }
